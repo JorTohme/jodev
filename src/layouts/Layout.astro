@@ -1,0 +1,45 @@
+---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Gugi&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+    </GoogleFontsOptimizer>
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		font-size: 16px;
+	}
+
+	.max-width {
+		width: 75ch;
+		max-width: 75ch;
+	}
+
+	.Gugi-font {
+    font-family: 'Gugi', cursive;
+  }
+
+	.IBMPlex-font {
+		font-family: 'IBM Plex Mono', monospace;
+	}
+</style>
