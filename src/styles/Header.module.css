@@ -1,0 +1,52 @@
+.label {
+  width: 68px;
+  height: 28px;
+  background-color: #424242;
+  position: absolute;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.sunMoon {
+  position: absolute;
+  width: 100%;
+  height: 28px;
+  display: flex;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.ball {
+  width: 28px;
+  height: 28px;
+  background-color: white;
+  border: 2px solid #878787;
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.toggleDarkMode {
+  visibility: hidden;
+}
+
+.toggleDarkMode:checked+.label {
+  background-color: #b4b4b4;
+}
+
+.toggleDarkMode:checked+.label .ball {
+  background-color: #373737;
+  border: 2px solid white;
+}
+
+.toggleDarkMode:checked+.label .ball {
+  transform: translateX(40px);
+}
+
+.darkHeader {
+  background-color: #282828
+}
+
+.lightHeader {
+  background-color: #f2f2f2
+}
